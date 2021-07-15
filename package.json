@@ -1,7 +1,7 @@
 {
   "name": "number-accurate",
-  "version": "1.0.1",
-  "description": "a module to calculate js number accurately, include plus function and times function",
+  "version": "1.0.2",
+  "description": "smallest module to solve the problem of JS number calculation accuracy",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,5 +11,9 @@
     "accurate"
   ],
   "author": "fengcaian",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:fengcaian/number-accurate.git"
+  }
 }
