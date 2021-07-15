@@ -1,6 +1,6 @@
 {
   "name": "number-accurate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a module to calculate js number accurately, include plus function and times function",
   "main": "index.js",
   "scripts": {
