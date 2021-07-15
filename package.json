@@ -1,0 +1,15 @@
+{
+  "name": "number-accurate",
+  "version": "1.0.0",
+  "description": "a module to calculate js number accurately, include add function and multi function",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "number",
+    "accurate"
+  ],
+  "author": "fengcaian",
+  "license": "ISC"
+}
