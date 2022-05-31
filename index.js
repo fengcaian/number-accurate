@@ -1,22 +1,23 @@
-function timesAccurate(arg1, arg2) {
-	let m = 0;
-	const s1 = arg1.toString();
-	const s2 = arg2.toString();
-	try {
-		if (s1.indexOf('.') !== -1) {
-			m += s1.split('.')[1].length;
-		}
-	} catch (e) {
-		throw new Error(e);
-	}
-	try {
-		if (s2.indexOf('.') !== -1) {
-			m += s2.split('.')[1].length;
-		}
-	} catch (e) {
-		throw new Error(e);
-	}
-	return Number(s1.replace('.', '')) * Number(s2.replace('.', '')) / Math.pow(10, m);
+function timesAccurate(...args) {
+  let m = 0;
+  let result = 1;
+  try {
+    for (let i = 0, l = args.length; i < l; i += 1) {
+      if (args[i].toString().indexOf('.') !== -1) {
+        m = args[i].toString().split('.')[1].length;
+      }
+      if (result.toString().indexOf('.') !== -1) {
+        m += result.toString().split('.')[1].length;
+      }
+      const x = Number(result.toString().replace('.', ''));
+      const y = Number(args[i].toString().replace('.', ''));
+      result = x * y / Math.pow(10, m);
+      m = 0;
+    }
+  } catch (e) {
+    throw new Error(e);
+  }
+  return result;
 }
 function plusAccurate(...arg) {
 	let decimalX = 0;
@@ -41,7 +42,7 @@ function plusAccurate(...arg) {
   	}
  return result;
 }
-function devideAccurate(arg1, arg2) {
+function divideAccurate(arg1, arg2) {
 	const reg = /(^([-])?[1-9]\d*(\.\d+)?$)|(^([-])?0(\.\d+)?$)/;
 	if (!reg.test(arg1) || !reg.test(arg2)) {
 		throw new Error('arguments only be number');
@@ -57,5 +58,9 @@ function minusAccurate(arg1, arg2) {
 	}
 	return plusAccurate(arg1, -arg2);
 }
+function toFixed(value, fractionDigits = 2) {
+  const t = '1'.padEnd(fractionDigits + 1, '0') - 0;
+  return (Math.round(accurate.multi(value, t)) / t).toFixed(fractionDigits);
+}
 
-module.exports = { timesAccurate, plusAccurate, devideAccurate, minusAccurate };
+module.exports = { timesAccurate, plusAccurate, divideAccurate, minusAccurate, toFixed };

@@ -16,6 +16,7 @@ import { plusAccurate, timesAccurate, devideAccurate, minusAccurate } from 'numb
 
 console.log(plusAccurate(0.1, 0.2)); // output 0.3
 console.log(timesAccurate(9, 0.3265)); // output 2.9385
-console.log(devideAccurate(1.21, 1.1)); // output 1.1
+console.log(divideAccurate(1.21, 1.1)); // output 1.1
 console.log(minusAccurate(1, 0.9)); // output 0.1
+console.log(toFixed(0.63355, 4)); // 0.6336
 ```

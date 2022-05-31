@@ -1,6 +1,6 @@
 {
   "name": "number-accurate",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "smallest module to solve the problem of JS number calculation accuracy",
   "main": "index.js",
   "scripts": {
